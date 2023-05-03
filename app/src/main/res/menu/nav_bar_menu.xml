@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        android:id="@+id/fragmentFinderMain" />
+    <item
+
+        android:id="@+id/Market"
+        android:icon="@drawable/ic_home"
+        android:title="Market"
+
+        />
+    <item
+        android:title="Pandit"
+        android:id="@+id/Pandit"
+        android:icon="@drawable/ic_home" />
+<!--    <item-->
+<!--        android:title="@string/material"-->
+<!--        android:icon="@drawable/ic_material_new2"-->
+<!--        android:id="@+id/materialSectionFragment" />-->
+    <item
+        android:title="My Profile"
+        android:icon="@drawable/ic_home"
+        android:id="@+id/MyProfile" />
+
+
+    <!--    <item android:title="@string/construction"-->
+    <!--        android:icon="@drawable/ic_construction"-->
+    <!--        android:id="@+id/constructionFragment"-->
+    <!--        />-->
+
+
+</menu>

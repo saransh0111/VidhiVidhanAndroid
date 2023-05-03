@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.teams.vidhividhan.ui.splash.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.teams.vidhividhan.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_panditDetailsFragment"
+            app:destination="@id/panditDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.teams.vidhividhan.ui.cart.CartFragment"
+        android:label="CartFragment" />
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.teams.vidhividhan.ui.marketplace.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" >
+        <action
+            android:id="@+id/action_productDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/panditFragment"
+        android:name="com.teams.vidhividhan.ui.pandit.PanditFragment"
+        android:label="PanditFragment" >
+        <action
+            android:id="@+id/action_panditFragment_to_panditDetailsFragment"
+            app:destination="@id/panditDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/panditDetailsFragment"
+        android:name="com.teams.vidhividhan.ui.pandit.PanditDetailsFragment"
+        android:label="PanditDetailsFragment" >
+        <action
+            android:id="@+id/action_panditDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/marketFragment"
+        android:name="com.teams.vidhividhan.ui.marketplace.MarketFragment"
+        android:label="MarketFragment" >
+        <action
+            android:id="@+id/action_marketFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.teams.vidhividhan.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.teams.vidhividhan.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>

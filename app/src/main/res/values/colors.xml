@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="dulWhite">#FBFBFB</color>
+    <color name="mainBlack">#1E1E1E</color>
+    <color name="textBlack">#121212</color>
+    <color name="textGrey">#A31E1E1E</color>
+    <color name="textGrey68">#A31E1E1E</color>
+    <color name="hintGrey">#801E1E1E</color>
+    <color name="yellow">#FFDB3D</color>
+    <color name="checkBoxGreen">#27AE60</color>
+    <color name="line_color">#000000</color>
+    <color name="lightBlue">#F0F8FF</color>
+    <color name="selectedColor">#1E1E1E</color>
+    <color name="unselectedColor">#FFFFFF</color>
+
+
+    <color name="OrangeNew">#DA7822</color>
+    <color name="lightGreenBg">#1F219653</color>
+    <color name="blue">#1363EF</color>
+    <color name="blue_2">#2F80ED</color>
+    <color name="blue_3">#5593FF</color>
+    <color name="blue_3_light">#1A5593FF</color>
+    <color name="lightRedBgColor">#1FEA3333</color>
+    <color name="red">#EB5757</color>
+    <color name="orangeLightBg">#1FFF9538</color>
+    <color name="orange">#F2994A</color>
+    <color name="parrot_green">#219653</color>
+
+    <color name="ws_broker">#E9F6FF</color>
+    <color name="ws_cons">#FDFFE9</color>
+    <color name="ws_owner">#E9EAFF</color>
+    <color name="ws_onestop">#FFEFE9</color>
+
+    <color name="temp1">#FFFFFF</color>
+    <color name="temp2">#FFF0F0</color>
+    <color name="temp3">#FFFDF0</color>
+    <color name="temp4">#FBFFEA</color>
+    <color name="temp5">#EFFFEE</color>
+    <color name="temp6">#ECFDFD</color>
+    <color name="temp7">#EAEEFF</color>
+    <color name="temp8">#F9EEFF</color>
+    <color name="temp9">#FDECF2</color>
+
+
+</resources>

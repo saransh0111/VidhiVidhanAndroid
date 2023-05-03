@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.VidhiVidhan" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/mainBlack</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/dulWhite</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/textGrey</item>
+        <item name="colorSecondaryVariant">@color/hintGrey</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/dulWhite</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+<!--        <item name="fontFamily">@font/montserrat_medium</item>-->
+        <!--        <item name="homeAsUpIndicator">@drawable/ic_arrow_back</item>-->
+
+        <!-- these should be the correct ones -->
+        <!--        <item name="enterAnim">@anim/nav_default_enter_anim</item>-->
+        <!--        <item name="exitAnim">@anim/nav_default_exit_anim</item>-->
+        <!--        <item name="popEnterAnim">@anim/nav_default_pop_enter_anim</item>-->
+        <!--        <item name="popExitAnim">@anim/nav_default_pop_exit_anim</item>-->
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="Theme.new.bottomNav" parent="Theme.Material3.Light">
+        <item name="colorOnSecondaryContainer">@color/black</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorSecondaryContainer">#d5e6fb</item>
+        <item name="colorOnSurfaceVariant">@color/hintGrey</item>
+        <item name="cornerRadius">25dp</item>
+    </style>
+    <style name="MyBottomNavigationView.TextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorOnPrimary">@color/checkBoxGreen</item>
+        <item name="colorOnSurface">@color/hintGrey</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowSoftInputMode">stateHidden</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/item_rounder_corner_top_dul_white</item>
+    </style>
+
+<!--    <style name="ChipModelStyle" parent="Widget.MaterialComponents.Chip.Choice">-->
+<!--        <item name="android:background">@drawable/item_blue_rounded_corner</item>-->
+<!--    </style>-->
+
+    <!--    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.*">-->
+    <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>-->
+    <!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
+    <!--        <item name="hintTextColor">?attr/colorOnSurface</item>-->
+    <!--    </style>-->
+
+    <!--    <style name="ThemeOverlay.App.TextInputLayout" parent="">-->
+    <!--        <item name="colorPrimary">@color/shrine_pink_100</item>-->
+    <!--        <item name="colorOnSurface">@color/shrine_pink_900</item>-->
+    <!--        <item name="colorError">@color/shrine_red</item>-->
+    <!--        <item name="textAppearanceSubtitle1">@style/TextAppearance.App.Subtitle1</item>-->
+    <!--        <item name="textAppearanceCaption">@style/TextAppearance.App.Caption</item>-->
+    <!--        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.*</item>-->
+    <!--    </style>-->
+    <style name="MenuItems">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="MenuItems2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/themewithcorner</item>
+    </style>
+
+    <style name="themewithcorner" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@drawable/item_rounder_corner_top_dul_white</item>
+    </style>
+
+<!--    <style name="RoundedTabLayoutStyle" parent="Widget.Design.TabLayout">-->
+<!--        <item name="tabBackground">@drawable/tabs_selector</item>-->
+<!--        <item name="tabIndicator">@null</item>-->
+<!--        <item name="android:background">@drawable/white_rounded_corner</item>-->
+<!--        <item name="tabSelectedTextColor">@color/white</item>-->
+<!--        <item name="tabTextColor">@color/mainBlack</item>-->
+<!--        <item name="fontFamily">@font/montserrat</item>-->
+<!--    </style>-->
+
+    <style name="Colors_Widget.MaterialComponents.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">12dp</item>
+        <item name="chipMinHeight">24dp</item>
+        <item name="chipMinTouchTargetSize">5dp</item>
+        <!--        <item name="chipBackgroundColor">@color/</item>-->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="SCBSwitch">
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
+
+    <style name="CustomTextInputLayoutDropDown" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="hintAnimationEnabled">true</item>
+        <item name="hintEnabled">true</item>
+        <item name="expandedHintEnabled">false</item>
+    </style>
+</resources>
