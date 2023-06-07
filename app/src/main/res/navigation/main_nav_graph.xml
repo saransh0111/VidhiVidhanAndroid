@@ -7,17 +7,22 @@
 
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.teams.vidhividhan.ui.splash.SplashScreenFragment"
+        android:name="com.teams.vidhividhan.ui.views.splash.SplashScreenFragment"
         android:label="SplashScreenFragment"
         tools:layout="@layout/fragment_splash_screen">
         <action
             android:id="@+id/action_splashScreenFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.teams.vidhividhan.ui.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:name="com.teams.vidhividhan.ui.views.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"
+        >
         <action
             android:id="@+id/action_homeFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
@@ -27,27 +32,33 @@
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.teams.vidhividhan.ui.cart.CartFragment"
-        android:label="CartFragment" />
+        android:name="com.teams.vidhividhan.ui.views.cart.CartFragment"
+        android:label="CartFragment"
+
+        />
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.teams.vidhividhan.ui.marketplace.ProductDetailsFragment"
-        android:label="ProductDetailsFragment" >
+        android:name="com.teams.vidhividhan.ui.views.marketplace.ProductDetailsFragment"
+        android:label="ProductDetailsFragment"
+
+        >
         <action
             android:id="@+id/action_productDetailsFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/panditFragment"
-        android:name="com.teams.vidhividhan.ui.pandit.PanditFragment"
-        android:label="PanditFragment" >
+        android:name="com.teams.vidhividhan.ui.views.pandit.PanditFragment"
+        android:label="PanditFragment"
+        tools:layout="@layout/fragment_pandit"
+        >
         <action
             android:id="@+id/action_panditFragment_to_panditDetailsFragment"
             app:destination="@id/panditDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/panditDetailsFragment"
-        android:name="com.teams.vidhividhan.ui.pandit.PanditDetailsFragment"
+        android:name="com.teams.vidhividhan.ui.views.pandit.PanditDetailsFragment"
         android:label="PanditDetailsFragment" >
         <action
             android:id="@+id/action_panditDetailsFragment_to_cartFragment"
@@ -55,16 +66,20 @@
     </fragment>
     <fragment
         android:id="@+id/marketFragment"
-        android:name="com.teams.vidhividhan.ui.marketplace.MarketFragment"
-        android:label="MarketFragment" >
+        android:name="com.teams.vidhividhan.ui.views.marketplace.MarketFragment"
+        android:label="MarketFragment"
+        tools:layout="@layout/fragment_market"
+        >
         <action
             android:id="@+id/action_marketFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.teams.vidhividhan.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" >
+        android:name="com.teams.vidhividhan.ui.views.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        >
         <action
             android:id="@+id/action_profileFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
@@ -74,6 +89,26 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.teams.vidhividhan.ui.settings.SettingsFragment"
+        android:name="com.teams.vidhividhan.ui.views.settings.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.teams.vidhividhan.ui.views.Auth.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_signup"
+        >
+        <action
+            android:id="@+id/action_signUpFragment_to_verifyOtpFragment"
+            app:destination="@id/verifyOtpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyOtpFragment"
+        android:name="com.teams.vidhividhan.ui.views.Auth.verifyotp.VerifyOtpFragment"
+        android:label="VerifyOtpFragment"
+        tools:layout="@layout/fragment_verify_otp"
+        >
+        <action
+            android:id="@+id/action_verifyOtpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package com.teams.vidhividhan.ui.settings
+package com.teams.vidhividhan.ui.views.settings
 
 import androidx.fragment.app.Fragment
 

@@ -1,4 +1,4 @@
-package com.teams.vidhividhan.ui.pandit
+package com.teams.vidhividhan.ui.views.profile
 
 import android.os.Bundle
 import android.util.Log
@@ -10,11 +10,11 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.teams.vidhividhan.data.prefrences.SharedPrefs
 import com.teams.vidhividhan.databinding.FragmentHomeBinding
-import com.teams.vidhividhan.databinding.FragmentPanditBinding
+import com.teams.vidhividhan.databinding.FragmentProfileBinding
 import org.koin.android.ext.android.inject
 
-class PanditFragment:Fragment() {
-    private var _binding: FragmentPanditBinding? = null
+class ProfileFragment:Fragment() {
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
     private val sharedPrefs: SharedPrefs by inject()
@@ -26,7 +26,7 @@ class PanditFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentPanditBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -37,7 +37,7 @@ class PanditFragment:Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        Log.d("#@#","pandit")
+        Log.d("#@#","profile")
 //        setApiObserver()
     }
 }

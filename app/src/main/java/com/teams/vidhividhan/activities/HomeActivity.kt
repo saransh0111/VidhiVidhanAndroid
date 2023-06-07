@@ -5,13 +5,12 @@ import android.util.Log
 import android.view.Menu
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
+
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.teams.vidhividhan.R
 import com.teams.vidhividhan.databinding.ActivityHomeBinding
-import com.teams.vidhividhan.databinding.ActivityMainBinding
 
 class HomeActivity:AppCompatActivity() {
     private var _binding: ActivityHomeBinding? = null

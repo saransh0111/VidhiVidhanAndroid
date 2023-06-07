@@ -1,4 +1,4 @@
-package com.teams.vidhividhan.ui.cart
+package com.teams.vidhividhan.ui.views.cart
 
 import androidx.fragment.app.Fragment
 

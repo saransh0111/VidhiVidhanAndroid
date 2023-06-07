@@ -1,4 +1,4 @@
-package com.teams.vidhividhan.ui.marketplace
+package com.teams.vidhividhan.ui.views.marketplace
 
 import androidx.fragment.app.Fragment
 

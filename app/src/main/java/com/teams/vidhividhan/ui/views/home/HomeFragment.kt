@@ -1,4 +1,4 @@
-package com.teams.vidhividhan.ui.home
+package com.teams.vidhividhan.ui.views.home
 
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.widget.ViewUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -21,9 +22,13 @@ import com.teams.vidhividhan.model.homeModel.NewProductModel
 import com.teams.vidhividhan.model.homeModel.TopPanditModel
 import com.teams.vidhividhan.model.homeModel.TopProductModel
 import com.teams.vidhividhan.model.homeModel.TopShopsModel
+import com.teams.vidhividhan.model.marketplaceModel.MarketPlaceModel
+import com.teams.vidhividhan.ui.views.marketplace.viewModel.MarketViewModel
+import com.teams.vidhividhan.utils.MyViewutils
 import com.teams.vidhividhan.utils.reusableAdapter.AdapterCallback
 import com.teams.vidhividhan.utils.reusableAdapter.ReuseAdapter
 import org.koin.android.ext.android.inject
+import org.koin.java.KoinJavaComponent.inject
 import java.util.Collections.addAll
 
 class HomeFragment:Fragment() {
@@ -33,15 +38,21 @@ class HomeFragment:Fragment() {
     private val sharedPrefs: SharedPrefs by inject()
     lateinit var navController: NavController
 
+    private val marketViewModel : MarketViewModel by inject()
+
+    private lateinit var allProductModel: MarketPlaceModel
+
     private val topProductList:MutableList<TopProductModel> = mutableListOf()
     private val newProductList:MutableList<NewProductModel> = mutableListOf()
     private val topPanditList:MutableList<TopPanditModel> = mutableListOf()
     private val topShopList:MutableList<TopShopsModel> = mutableListOf()
+    private val allProductList:MutableList<MarketPlaceModel> = mutableListOf()
 
     private lateinit var topProductAdapter : ReuseAdapter<TopProductModel>
     private lateinit var newProductAdapter : ReuseAdapter<NewProductModel>
     private lateinit var topPanditAdapter : ReuseAdapter<TopPanditModel>
     private lateinit var topShopAdapter: ReuseAdapter<TopShopsModel>
+    private lateinit var allProductAdapter : ReuseAdapter<MarketPlaceModel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,10 +84,41 @@ class HomeFragment:Fragment() {
         Log.d("#@#","home")
 //        setApiObserver()
         binding.layoutToolbar.toolbarTitle.text="Vidhi Vidhan"
+        callApi()
+        setObserver()
         handleTopProductResponse()
         handleNewProductResponse()
         handleTopPanditResponse()
         handleTopShopResponse()
+
+    }
+
+    private fun callApi(){
+        marketViewModel.getProductList()
+    }
+
+    private fun setObserver(){
+        marketViewModel.marketViewModelLiveData.observe(viewLifecycleOwner){
+            if(!it.isResponseHandled()){
+                when(it.status){
+                    Status.SUCCESS ->{
+                      allProductModel = it.data as MarketPlaceModel
+                        handleAllProductResponse(allProductModel)
+                    }
+                    Status.LOADING->{
+
+                    }
+                    Status.ERROR->{
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    private fun handleAllProductResponse(data:MarketPlaceModel){
+        Log.d("#@#","handle all productResponse"+data.toString())
     }
 
     private fun handleTopProductResponse(){
@@ -114,7 +156,7 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: TopProductModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
     }
 
@@ -153,7 +195,7 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: NewProductModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
     }
 
@@ -192,7 +234,11 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: TopPanditModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+
+            MyViewutils.showToast(context,"will be implemented later")
+
+
+
         }
 
     }
@@ -232,7 +278,7 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: TopShopsModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
 
     }

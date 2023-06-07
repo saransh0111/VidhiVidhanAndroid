@@ -1,4 +1,4 @@
-package com.teams.vidhividhan.ui.splash
+package com.teams.vidhividhan.ui.views.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.teams.vidhividhan.R
 import com.teams.vidhividhan.activities.HomeActivity
 import com.teams.vidhividhan.data.prefrences.SharedPrefs
 import com.teams.vidhividhan.databinding.FragmentSplashScreenBinding
@@ -55,11 +56,29 @@ class SplashScreenFragment:Fragment() {
     }
 
     private fun navigate(){
-        activity?.let {
-            it.startActivity(Intent(requireContext(), HomeActivity::class.java))
-            it.finish()
+        Log.d("#@#","current dest "+navController.currentDestination?.id.toString())
+
+        if (sharedPrefs.accessToken.isNotEmpty() )
+        {
+            if (sharedPrefs.isLogin)
+            {
+                activity?.let {
+                    it.startActivity(Intent(requireContext(), HomeActivity::class.java))
+                    it.finish()
+                }
+            }
+            else
+            {
+                navController.navigate(R.id.action_splashScreenFragment_to_signUpFragment)
+            }
         }
-//        navController.navigate(R.id.action_splashScreenFragment_to_homeFragment)
+        else
+        {
+                    if (navController.currentDestination?.id==R.id.splashScreenFragment){
+                        navController.navigate(R.id.action_splashScreenFragment_to_signUpFragment)
+                    }
+//            navController.navigate(R.id.action_splashScreenFragment_to_signUpFragment)
+        }
     }
     private fun setApiObserver(){
 

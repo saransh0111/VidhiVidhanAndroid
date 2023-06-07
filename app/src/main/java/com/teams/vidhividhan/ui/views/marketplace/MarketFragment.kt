@@ -1,4 +1,4 @@
-package com.teams.vidhividhan.ui.marketplace
+package com.teams.vidhividhan.ui.views.marketplace
 
 import android.os.Bundle
 import android.os.Handler
@@ -16,7 +16,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.teams.vidhividhan.data.prefrences.SharedPrefs
 import com.teams.vidhividhan.databinding.FragmentMarketBinding
-import com.teams.vidhividhan.ui.marketplace.marketCategories.TrendingProductFragment
+import com.teams.vidhividhan.ui.views.marketplace.marketCategories.TrendingProductFragment
 import com.teams.vidhividhan.utils.reusableAdapter.ViewPagerAdapter
 import org.koin.android.ext.android.inject
 

@@ -1,6 +1,10 @@
 package com.teams.vidhividhan.baseApplication
 
 import android.app.Application
+import com.teams.vidhividhan.data.di.viewModelModule
+import com.teams.vidhividhan.data.di.apiModule
+import com.teams.vidhividhan.data.di.persistenceModule
+import com.teams.vidhividhan.data.di.repoModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -10,7 +14,7 @@ class BaseApplication:Application() {
         context = this
         startKoin {
             androidContext(this@BaseApplication)
-//            modules(listOf(persistenceModule, viewModelModule, apiModule, repoModule))
+            modules(listOf(persistenceModule, viewModelModule, apiModule, repoModule))
         }
 
 
