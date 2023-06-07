@@ -15,6 +15,7 @@ import com.teams.vidhividhan.databinding.FragmentTrendingProductBinding
 import com.teams.vidhividhan.model.homeModel.TopProductModel
 import com.teams.vidhividhan.model.marketplaceModel.MarketPlaceModel
 import com.teams.vidhividhan.ui.marketplace.MarketFragment
+import com.teams.vidhividhan.utils.MyViewutils
 import com.teams.vidhividhan.utils.reusableAdapter.AdapterCallback
 import com.teams.vidhividhan.utils.reusableAdapter.ReuseAdapter
 
@@ -101,7 +102,7 @@ class TrendingProductFragment() : Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: MarketPlaceModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
 
     }

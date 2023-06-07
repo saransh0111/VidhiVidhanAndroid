@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.widget.ViewUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -21,6 +22,7 @@ import com.teams.vidhividhan.model.homeModel.NewProductModel
 import com.teams.vidhividhan.model.homeModel.TopPanditModel
 import com.teams.vidhividhan.model.homeModel.TopProductModel
 import com.teams.vidhividhan.model.homeModel.TopShopsModel
+import com.teams.vidhividhan.utils.MyViewutils
 import com.teams.vidhividhan.utils.reusableAdapter.AdapterCallback
 import com.teams.vidhividhan.utils.reusableAdapter.ReuseAdapter
 import org.koin.android.ext.android.inject
@@ -114,7 +116,7 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: TopProductModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
     }
 
@@ -153,7 +155,7 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: NewProductModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
     }
 
@@ -192,7 +194,7 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: TopPanditModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
 
     }
@@ -232,7 +234,7 @@ class HomeFragment:Fragment() {
         }
 
         override fun onItemClicked(itemView: View, data: TopShopsModel, itemIndex: Int) {
-            TODO("Not yet implemented")
+            MyViewutils.showToast(context,"will be implemented later")
         }
 
     }
