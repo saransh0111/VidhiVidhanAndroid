@@ -51,4 +51,36 @@
     <color name="temp9">#FDECF2</color>
 
 
+    <!--Accents-->
+
+    <color name="sea_green">#2CA7A4</color>
+    <color name="light_orange">#FFE5E5</color>
+    <color name="light_orange_2">#A6FFE5E5</color>
+    <color name="light_orange_3">#80FFE5E5</color>
+    <color name="brown">#582304</color>
+
+    <!--Neutrals-->
+
+    <color name="gray_plus">#121212</color>
+    <color name="gray">#333333</color>
+    <color name="light_gray">#A1A1A1</color>
+    <color name="light_gray_2">#A2A2A2</color>
+    <color name="bg_color">#F4F4F4</color>
+    <color name="bg_color_home">#FBFBFB</color>
+
+    <!--Semantics-->
+    <color name="semantic_green">#27AE60</color>
+    <color name="semantic_sky_blue">#2F80ED</color>
+    <color name="semantic_purple">#9B51E0</color>
+    <color name="semantic_red">#E03333</color>
+
+
+    <color name="ucrop_color_toolbar">@color/white</color>
+    <color name="ucrop_color_statusbar">@color/brown</color>
+    <color name="ucrop_color_widget_active">@color/orange</color>
+    <color name="ucrop_color_toolbar_widget">@color/gray_plus</color>
+
+
+
+
 </resources>

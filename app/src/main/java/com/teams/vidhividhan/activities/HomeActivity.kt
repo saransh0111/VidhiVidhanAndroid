@@ -20,7 +20,7 @@ class HomeActivity:AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupNavigationBar()
@@ -32,11 +32,12 @@ class HomeActivity:AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.homeFragment -> {
-
                     binding.btmNav.visibility = View.VISIBLE
+                    Log.d("#@#","home click")
                 }
                 R.id.marketFragment -> {
                     binding.btmNav.visibility = View.VISIBLE
+                    Log.d("#@#","market click")
                 }
                 R.id.panditFragment -> {
                     binding.btmNav.visibility = View.VISIBLE
@@ -55,16 +56,18 @@ class HomeActivity:AppCompatActivity() {
     private fun setupNavigationBar() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
+
         val navGraph = navController.navInflater.inflate(R.navigation.main_nav_graph)
         navGraph.setStartDestination(R.id.homeFragment)
+
         navController.graph = navGraph
         NavigationUI.setupWithNavController(binding.btmNav, navController)
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.nav_bar_menu, menu)
-//        return true
-//    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.nav_bar_menu, menu)
+        return true
+    }
 
 }

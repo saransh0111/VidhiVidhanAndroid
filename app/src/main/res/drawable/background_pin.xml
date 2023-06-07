@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- PinEntryEditText has error set -->
+    <item android:state_active="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <stroke android:width="0.8dp" android:color="@color/brown" />
+            <solid android:color="@color/light_orange" />
+        </shape>
+    </item>
+    <!-- Space contains text -->
+    <item android:state_checked="true" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <stroke android:width="0.8dp" android:color="@color/orange" />
+            <solid android:color="@color/light_orange" />
+        </shape>
+    </item>
+    <!--Space is the next space for character input -->
+    <item android:state_focused="true" android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <stroke android:width="0.8dp" android:color="@color/orange" />
+            <solid android:color="@color/bg_color" />
+        </shape>
+    </item>
+    <!--Space contains text and not focused -->
+    <item android:state_focused="false" android:state_checked="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <stroke android:width="0.8dp" android:color="@color/orange" />
+            <solid android:color="@color/light_orange" />
+        </shape>
+    </item>
+    <!-- PinEntryEditText is focused -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <stroke android:width="0.8dp" android:color="@color/light_gray" />
+            <solid android:color="@color/bg_color" />
+        </shape>
+    </item>
+    <!-- PinEntryEditText is not focused -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <stroke android:width="0.8dp" android:color="@color/light_gray" />
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+
+</selector>
