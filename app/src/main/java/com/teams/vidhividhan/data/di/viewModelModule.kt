@@ -11,7 +11,7 @@ import org.koin.dsl.module
 val viewModelModule = module {
     viewModel { MarketViewModel(get()) }
     viewModel { ProfileViewModel(get()) }
-    viewModel{CommonViewModel()}
+    viewModel { CommonViewModel()}
     single { PreferencesDataStoreViewModel(get()) }
 
 }

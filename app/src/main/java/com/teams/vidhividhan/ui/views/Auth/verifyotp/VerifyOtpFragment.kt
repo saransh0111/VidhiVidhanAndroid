@@ -2,11 +2,13 @@ package com.teams.vidhividhan.ui.views.Auth.verifyotp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.teams.vidhividhan.activities.HomeActivity
@@ -28,7 +30,7 @@ class VerifyOtpFragment:Fragment() {
     lateinit var navController: NavController
 
     private val profileViewModel : ProfileViewModel by inject()
-    private val commonViewModel : CommonViewModel by activityViewModels()
+    private lateinit var commonViewModel : CommonViewModel
     private lateinit var profileModel : ProfileModel
     private var otp:String =""
 
@@ -49,10 +51,13 @@ class VerifyOtpFragment:Fragment() {
         navController = Navigation.findNavController(view)
         setApiObserver()
         setOnClickListener()
-        commonViewModel.signupDetailsLiveData.observe(this){
+        commonViewModel = ViewModelProvider(requireActivity())[CommonViewModel::class.java]
+        commonViewModel.signupDetailsLiveData.observe(viewLifecycleOwner){
+            Log.d("#@#","on verify otp"+it)
             profileModel= it
+            initViews()
         }
-        initViews()
+
     }
 
     private fun initViews(){
@@ -63,10 +68,14 @@ class VerifyOtpFragment:Fragment() {
         binding.signupSubmitButton.setOnClickListener {
             if (isFormValid()){
                 postVerifyOtp()
-                otp=binding.signupVerifyOtp.otp.toString()
+
             }else{
                 ViewUtils.showToast("Please Check The OTP")
             }
+        }
+
+        binding.resend.setOnClickListener {
+
         }
     }
 
@@ -77,6 +86,7 @@ class VerifyOtpFragment:Fragment() {
     }
 
     private fun postVerifyOtp(){
+        otp=binding.signupVerifyOtp.otp.toString()
         profileViewModel.verifyOtp(VerifyOtpModel(profileModel.mobile,otp))
     }
 
@@ -103,7 +113,8 @@ class VerifyOtpFragment:Fragment() {
     }
 
     private fun handleVerifyResponse(data:VerifyOtpModel){
-        sharedPrefs.accessToken=data.assessToken
+        sharedPrefs.accessToken=data.result?.token?.access
+        sharedPrefs.refreshToken=data.result?.token?.refresh
         sharedPrefs.isLogin=true
         activity?.let {
             it.startActivity(Intent(requireContext(), HomeActivity::class.java))

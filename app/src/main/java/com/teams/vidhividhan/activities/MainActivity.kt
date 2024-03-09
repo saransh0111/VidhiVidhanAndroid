@@ -6,11 +6,13 @@ import android.util.Log
 import android.view.Menu
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.teams.vidhividhan.R
 import com.teams.vidhividhan.databinding.ActivityMainBinding
+import com.teams.vidhividhan.ui.viewModel.CommonViewModel
 
 class MainActivity : AppCompatActivity(){
 
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity(){
     private val binding get() = _binding!!
 
     private lateinit var navController: NavController
+    private var commonViewModel : CommonViewModel?= null
 //    var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity(){
 //        setContentView(R.layout.activity_main)
         setContentView(binding.root)
         setupNavigation()
-
+        commonViewModel = ViewModelProvider(this)[CommonViewModel::class.java]
     }
 
 //    override fun onStart() {

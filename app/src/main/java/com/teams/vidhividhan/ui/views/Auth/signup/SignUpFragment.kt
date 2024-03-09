@@ -114,7 +114,7 @@ class SignUpFragment:Fragment() {
     }
 
     private fun handleSignupResponse(data :ProfileModel){
-        commonViewModel.signupDetailsLiveData.postValue(ProfileModel(data.mobile,data.fullName,data.address,data.pincode))
+        commonViewModel.signupDetailsLiveData.postValue(ProfileModel( binding.signupMobile.editText?.text.toString(),data.fullName,data.address,data.pincode))
         navController.navigate(R.id.action_signUpFragment_to_verifyOtpFragment)
     }
 
